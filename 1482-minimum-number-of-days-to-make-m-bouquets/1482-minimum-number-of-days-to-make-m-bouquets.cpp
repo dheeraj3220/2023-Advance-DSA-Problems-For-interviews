@@ -1,8 +1,6 @@
 class Solution {
 public:
-    int bloomable(vector<int>&bloomDay,int m,int k, int cur){
-        int bouquet=0;
-        int curFlow=0;
+    int bloomable(vector<int>&bloomDay,int m,int k, int cur ,int bouquet=0,int curFlow=0){
         for(auto bd:bloomDay){
             if(bd<=cur){
                 curFlow++;
