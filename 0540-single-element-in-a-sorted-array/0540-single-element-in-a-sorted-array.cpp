@@ -1,8 +1,16 @@
 class Solution {
 public:
     int singleNonDuplicate(vector<int>& nums) {
-        int sum=0;
-        for(auto num: nums) sum=sum^num;
-        return sum;
+        int low=0,high=nums.size()-2;
+        while(low<=high){
+            int mid=(low+high)>>1;
+            if(nums[mid]==nums[mid^1]){
+                low=mid+1;
+            }
+            else{
+                high=mid-1;
+            }
+        }
+        return nums[low];
     }
 };
