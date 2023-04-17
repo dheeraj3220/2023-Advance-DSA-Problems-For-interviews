@@ -2,8 +2,9 @@ class Solution {
 public:
     vector<vector<int>> generate(int numRows) {
         vector<vector<int>> res;
+        vector<int> curRow;
         for(int i=0;i<numRows;i++){
-            vector<int> curRow(i+1,0);
+            curRow.resize(i+1);
             curRow[0]=1;
             curRow[i]=1;
             for(int j=1;j<i;j++){
