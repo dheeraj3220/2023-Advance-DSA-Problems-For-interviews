@@ -22,12 +22,12 @@ public:
             longestZigZag(root->left,-1,curLen+1);
         }
         else if(dir==-1){
-            maxLen=max(maxLen,curLen);
+            // maxLen=max(maxLen,curLen);
             longestZigZag(root->right,1,curLen+1);
             longestZigZag(root->left,-1,1);
         }
         else{
-            maxLen=max(maxLen,curLen);
+            // maxLen=max(maxLen,curLen);
             longestZigZag(root->right,1,1);
             longestZigZag(root->left,-1,curLen+1);
         }
