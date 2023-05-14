@@ -3,8 +3,7 @@ public:
     int countSeniors(vector<string>& details) {
         int count=0;
         for(auto d : details ){
-            string age=d.substr(11,2);
-            if(stoi(age)>60) count++;
+            if(stoi(d.substr(11,2))>60) count++;
         }
         return count;
     }
