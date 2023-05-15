@@ -10,7 +10,6 @@ public:
                  if(abs(res.back())>abs(ast[i]))   i++;
                  else if(abs(res.back())<abs(ast[i])) res.pop_back();
                  else {
-                     cout<<"imp";
                     res.pop_back();
                     i++;
                 }
