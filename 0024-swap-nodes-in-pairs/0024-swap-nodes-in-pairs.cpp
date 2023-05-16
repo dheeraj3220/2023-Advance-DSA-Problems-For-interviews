@@ -31,7 +31,7 @@ public:
             head->next=temp->next;
             temp->next=head;
             if(prev) prev->next=temp;
-            prev=temp->next;
+            prev=head;
             head=head->next;
         }
         return newHead;
