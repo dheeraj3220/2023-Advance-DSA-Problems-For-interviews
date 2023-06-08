@@ -15,6 +15,6 @@ public:
             j++;
         }
         maxSum=max(sum,maxSum);
-        return maxSum/(k*1.0);
+        return maxSum/(k);
     }
 };
