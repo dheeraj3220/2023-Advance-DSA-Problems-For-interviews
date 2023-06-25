@@ -10,13 +10,13 @@ public:
         if(nums[index]==1) count++;
         if(count>1) return 0;
         if(dp[index][count]!=-1) return dp[index][count];
-        int ans=0;
+        dp[index][count]=0;
         if(count==1)
         {
-            ans=helper(nums,0,index+1,dp);
+            dp[index][count]=helper(nums,0,index+1,dp);
         }
-        ans= (ans+helper(nums,count,index+1,dp)) % mod;
-        return dp[index][count]=ans;
+        dp[index][count]= (dp[index][count]+helper(nums,count,index+1,dp)) % mod;
+        return dp[index][count];
     }
     int numberOfGoodSubarraySplits(vector<int>& nums) {
         vector<vector<int>> dp(nums.size(),vector<int>(2,-1));
