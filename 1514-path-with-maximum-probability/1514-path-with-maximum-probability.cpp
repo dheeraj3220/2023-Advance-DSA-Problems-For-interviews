@@ -18,10 +18,10 @@ public:
             if(vis[currNode]==1) continue;
             vis[currNode]=1;
             for(auto adjNode: adj[currNode]){
-                if(!vis[adjNode.first]){
-                    vis[adjNode.first]==1;
+                // if(!vis[adjNode.first]){
+                    // vis[adjNode.first]==1;
                     pq.push({currProb*adjNode.second,adjNode.first});
-                }
+                // }
             }
         }
         return 0;
