@@ -13,7 +13,6 @@ public:
             }
             else if(nums[i]==0 && flag==1){
                 flag=0;
-                cout<<len<<" --- "<<afterZeroLength<<endl;
                 maxLen=max((len+afterZeroLength),maxLen);
                 len=afterZeroLength;
                 afterZeroLength=0;
