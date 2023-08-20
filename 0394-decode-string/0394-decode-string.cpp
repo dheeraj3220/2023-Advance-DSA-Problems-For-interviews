@@ -8,7 +8,6 @@ public:
             if(s[index]>='0' && s[index]<='9'){
                 numstr+=s[index];
             }else if(s[index]>='a' && s[index]<='z') res+=s[index];
-            else if(s[index]==']') return res;
             else if(s[index]=='[') {
                 index+=1;
                 string ans=helper(s,index);
@@ -17,6 +16,7 @@ public:
                 res+=ans;
                 numstr="";
             }
+            else return res;
             index++;
             
         }
