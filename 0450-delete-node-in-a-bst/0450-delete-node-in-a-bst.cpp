@@ -33,8 +33,8 @@ public:
             }
             return root->left;
         }
-        if(root) root->left=deleteNode(root->left,key);
-        if(root) root->right=deleteNode(root->right,key);
+        if(root->val>key) root->left=deleteNode(root->left,key);
+        if(root->val<key) root->right=deleteNode(root->right,key);
         return root;
     }
 };
