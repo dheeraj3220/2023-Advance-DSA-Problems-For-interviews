@@ -11,24 +11,30 @@
  */
 class Solution {
 public:
-    void attachToLeft(TreeNode*root,TreeNode*subroot){
-        if(root==NULL) return ;
-        if(!root->left){
-            root->left=subroot;
-            return ;
-        }
-        attachToLeft(root->left,subroot);
-    }
     TreeNode* deleteNode(TreeNode* root, int key) {
-        if(root==NULL) return root;
+        if(!root) return NULL;
         if(root->val==key){
-            if(root->right==NULL) return root->left;
-            if(root->left==NULL) return root->right;
-            attachToLeft(root->right,root->left);
-            return root->right;
+            TreeNode* lf=root->left;
+            TreeNode*temp=root->right;
+            while(temp && temp->left && temp->left->left){
+                temp=temp->left;
+            }
+            if(temp && temp->left){
+                TreeNode*newRoot=temp->left;
+                newRoot->left=root->left;
+                temp->left=temp->left->right;
+                newRoot->right=root->right;
+                
+                return newRoot;
+            }
+            else if (temp){
+                temp->left=root->left;
+                return temp;
+            }
+            return root->left;
         }
-        root->left=deleteNode(root->left,key);
-        root->right=deleteNode(root->right,key);
+        if(root) root->left=deleteNode(root->left,key);
+        if(root) root->right=deleteNode(root->right,key);
         return root;
     }
 };
